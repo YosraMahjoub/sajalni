@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="/assets/front/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="/assets/front/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="/assets/front/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="page">
+        <!-- Top Bar Start -->
+      
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+         
+                <a class="navbar-brand">SAJALNI</a>
+                <div class="collapse navbar-collapse justify-content-between">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                       
+                        <div *ngIf="url==='/profile'; else elseif1">
+                        <a href="/profile" class="nav-item nav-link active">Profile</a>
+                    </div>
+                    <ng-template #elseif1>
+                        <a href="/profile" class="nav-item nav-link">Profile</a>  
+                    </ng-template>
+
+                        <div *ngIf="url==='/demande'; else elseif2">
+                        <a href="/demande/add" class="nav-item nav-link active">Demande</a>
+                    </div>
+                        <ng-template #elseif2>
+                            <a href="/demande/add" class="nav-item nav-link">Demande</a>  
+                        </ng-template>
+                        
+                        <a href="/login" class="nav-item nav-link ">Sign Out</a>
+                    </div>
+               
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+        
+        
+        <!-- Contact Start -->
+        
+        <!-- Contact End -->
+
+
+        <!-- Footer Start -->
+      
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/front/lib/easing/easing.min.js"></script>
+        <script src="/assets/front/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="/assets/front/lib/waypoints/waypoints.min.js"></script>
+        <script src="/assets/front/lib/counterup/counterup.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="/assets/front/mail/jqBootstrapValidation.min.js"></script>
+        <script src="/assets/front/mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="/assets/front/js/main.js"></script>
+    </body>
+</html>
