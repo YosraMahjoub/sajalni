@@ -3,38 +3,62 @@
 
 This project consists of the realization of an application that allows processing and validating requests for adding a phone device imported via the post office and passed through the border offices.
 
+To guarantee protection against the phenomenon of cell phone theft, the customer must first go to the Border Office as soon as he receives a notification of a package. The agent of the border office then enters the folder of the phones and the customer proceeds to register them on the application site. Finally, the technical controller studies the imported applications one by one and makes a decision for each of them, he accepts the application and therefore the phones will be allowed to communicate on the public telecommunications networks, or refuses it and therefore the phones will be blocked and forbidden to access the operators' services. 
 
-To guarantee protection against the phenomenon of cell phone theft, the customer must first go to the Border Office as soon as he receives a notification of a package. The agent of the border office then enters the file of the phones and the customer proceeds to register them on the application site. Finally, the technical controller studies the imported applications one by one and makes a decision for each of them, he accepts the application and therefore the phones will be allowed to communicate on the public telecommunications networks, or refuses it and therefore the phones will be blocked and forbidden to access the operators' services. 
 
+ <details><summary>💻 **Technologies** </summary>
 
- <details><summary>💻 Used Technologies & Tools</summary>
-
-  ####  Backend Technologies :
+  ####  Back-end  :
 <ol>
-<li>foo</li>
-<li>bar</li>
+<li>Java 8</li>
+<li> SpringBoot </li>
+ <li> JPA </li>
+ <li> Spring Security </li>
+</ol>
+ 
+   ####  Front-end  :
+<ol>
+<li>Angular</li>
+<li> Bootstrap </li>
+ <li> Typescript </li>
 </ol>
   
-Front-end
-Angular 8.
-Bootstrap.
-Back-end
-SpringBoot 2.x.x (Making REST API) [Java 8].
-Spring Security (Authentication & JWT)
-Maven
+   ####  Database Management  :
+<ol>
+<li> MySql </li>
+</ol>
 
 </details>
+ <details><summary>💻 **Features** </summary>
 
+The device validation System can be accessed by four categories of users: Customers, technical controllers, border office agents and administrators.
 
-
-
-The Flight Reservation System can be accessed by two categories of users: Customers and Administrators.
-
-Features for Customeres
-Customers can create a new account in order to log in.
-Customers can search available flights.
-Customers can make a booking, view current bookings, and modify and cancel a booking, if needed.
-Customers can see airport details for the airports associated with their flight(s).
-Features for Administrators
-Administrators can view all details for flights, schedules, and routes.
-Administrators can add, modify, and cancel flights, schedules, and routes.
+#### Features for Customeres
+ <ol>
+<li>Customers can create a new account in order to log in.</li>
+<li> Customers can make a validating request, view current requests, and modify and cancel a request, if needed. </li>
+<li> Customers can consult their profiles: and modify it., if needed. </li>
+</ol>
+ 
+ 
+#### Features for Border office agents
+ <ol>
+<li>Border office agents can create a new account in order to access the folder management features.</li>
+<li> Border office agents can make a validating folder, view current folders, modify and delete his folder, if needed as long as it is not yet validated. </li>
+<li> Border office agents can consult the different actions of other users on their folders.</li>
+</ol>
+ 
+ #### Features for Technical controllers
+ <ol>
+<li>Technical controllers can create a new account in order to access the folder management features.</li>
+<li>Technical controllers can accept/refuse requests/folders.  </li>
+<li>Technical controllers can consult the different actions of other users on the folders.</li>
+</ol>
+ 
+#### Features for Administrators
+ <ol>
+<li> Administrators can create accounts .</li>
+<li>Administrators can view all details of requests/folders. </li>
+<li>Administrators can add, modify, and delete folders. </li>
+ </ol>
+</details>
