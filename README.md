@@ -8,7 +8,7 @@ To guarantee protection against the phenomenon of cell phone theft, the customer
 
  <details><summary> <h3> 💻 Technologies </h3></summary>
 
-  ####  Back-end  :
+ > ####  Back-end  :
 <ol>
 <li>Java 8</li>
 <li> SpringBoot </li>
@@ -16,7 +16,7 @@ To guarantee protection against the phenomenon of cell phone theft, the customer
  <li> Spring Security </li>
 </ol>
  
-   ####  Front-end  :
+ >  ####  Front-end  :
 <ol>
 <li>Angular</li>
 <li> Bootstrap </li>
@@ -33,7 +33,7 @@ To guarantee protection against the phenomenon of cell phone theft, the customer
 
 The device validation System can be accessed by four categories of users: Customers, technical controllers, border office agents and administrators.
 
-#### Features for Customeres
+> #### Features for Customeres
  <ol>
 <li>Customers can create a new account in order to log in.</li>
 <li> Customers can make a validating request, view current requests, and modify and cancel a request, if needed. </li>
@@ -41,21 +41,21 @@ The device validation System can be accessed by four categories of users: Custom
 </ol>
  
  
-#### Features for Border office agents
+ > #### Features for Border office agents
  <ol>
 <li>Border office agents can create a new account in order to access the folder management features.</li>
 <li> Border office agents can make a validating folder, view current folders, modify and delete his folder, if needed as long as it is not yet validated. </li>
 <li> Border office agents can consult the different actions of other users on their folders.</li>
 </ol>
  
- #### Features for Technical controllers
+> #### Features for Technical controllers
  <ol>
 <li>Technical controllers can create a new account in order to access the folder management features.</li>
 <li>Technical controllers can accept/refuse requests/folders.  </li>
 <li>Technical controllers can consult the different actions of other users on the folders.</li>
 </ol>
  
-#### Features for Administrators
+> #### Features for Administrators
  <ol>
 <li> Administrators can create accounts .</li>
 <li>Administrators can view all details of requests/folders. </li>
