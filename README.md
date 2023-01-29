@@ -29,7 +29,7 @@ To guarantee protection against the phenomenon of cell phone theft, the customer
 </ol>
 
 </details>
- <details><summary>💻 **Features** </summary>
+ <details><summary>💻 ** Features ** </summary>
 
 The device validation System can be accessed by four categories of users: Customers, technical controllers, border office agents and administrators.
 
