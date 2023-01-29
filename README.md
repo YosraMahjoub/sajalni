@@ -23,7 +23,7 @@ To guarantee protection against the phenomenon of cell phone theft, the customer
  <li> Typescript </li>
 </ol>
   
-   ####  Database Management  :
+ >  ####  Database Management  :
 <ol>
 <li> MySql </li>
 </ol>
