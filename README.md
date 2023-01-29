@@ -6,7 +6,7 @@ This project consists of the realization of an application that allows processin
 To guarantee protection against the phenomenon of cell phone theft, the customer must first go to the Border Office as soon as he receives a notification of a package. The agent of the border office then enters the folder of the phones and the customer proceeds to register them on the application site. Finally, the technical controller studies the imported applications one by one and makes a decision for each of them, he accepts the application and therefore the phones will be allowed to communicate on the public telecommunications networks, or refuses it and therefore the phones will be blocked and forbidden to access the operators' services. 
 
 
- <details><summary>💻 **Technologies** </summary>
+ <details><summary> <h3> 💻 Technologies </h3></summary>
 
   ####  Back-end  :
 <ol>
@@ -29,7 +29,7 @@ To guarantee protection against the phenomenon of cell phone theft, the customer
 </ol>
 
 </details>
- <details><summary>💻 ** Features ** </summary>
+ <details><summary> <h3>💻 Features  </h3></summary>
 
 The device validation System can be accessed by four categories of users: Customers, technical controllers, border office agents and administrators.
 
