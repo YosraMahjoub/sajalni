@@ -1,0 +1,135 @@
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+    <app-sidebar>
+
+    </app-sidebar>
+  </aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+    <app-navbar></app-navbar>
+  
+
+
+<div class="container-fluid py-4"> 
+
+</div>
+<div class="container-fluid py-4">
+
+        <div class="card card-body border-0 blur shadow mb-4" style="border-radius: 1rem; ">
+            <h2 class="h3 mb-4" style="color: #686767;">Créer un dossier</h2>
+            <form  #dossierform="ngForm" (ngSubmit) = "onSubmit()">
+                       
+                  
+                <div class="mb-3 row ">
+                    <div class="col-sm-4">
+                        <label class="h6" >Importateur : </label>
+                       </div> 
+                       <div class="col-md-8 col-12">
+                        <input type="text" class="form-control" id="importateur" placeholder="Saisir le nom" required="required" 
+                        [(ngModel)] = "dossier.importateur" name = "importateur" #importateur="ngModel" 
+                        [class.is-invalid]="importateur.invalid && importateur.touched" />
+                 
+                    <small class="text-danger" [class.d-none]="importateur.valid || importateur.untouched" >veuillez saisir le nom complet</small>
+                </div>  
+             </div>
+
+                <div class="mb-3 row ">
+                    <div class="col-sm-4">
+                        <label class="h6" >Cin : </label>
+                       </div> 
+                       <div class="col-md-8 col-12">
+                        <input type="text" class="form-control" id="cin"  placeholder="Saisir le numéro du cin" required="required" [(ngModel)] = "dossier.cin" name = "cin" #cin="ngModel" 
+                        minlength="8"
+                        maxlength="8"
+                        pattern="^[0-9]*$"
+                        [class.is-invalid]="cin.invalid && cin.touched" />
+                 
+
+                  <div *ngIf="cin.errors && cin.invalid && cin.touched" >
+
+                            <small class="text-danger" *ngIf="cin.errors.required"> veuillez saisir le numéro du cin </small>
+                            <small class="text-danger" *ngIf="cin.errors.minlength || cin.errors.pattern "> veuillez saisir UN numéro valid "8 Chiffres"</small>
+                      
+                        </div>  
+                    
+                    </div>  
+                
+                </div>
+
+                <div class="mb-3 row ">
+                    <div class="col-sm-4">
+                        <label class="h6" >Passeport : </label>
+                       </div> 
+                       <div class="col-md-8 col-12">
+                     <input type="text" class="form-control" id="passeport" placeholder="Saisir le numéro du  passeport" required="required" 
+                     [(ngModel)] = "dossier.passport" name = "passeport" #passeport="ngModel" 
+                     
+                     minlength="7"
+                     maxlength="7"
+                     [class.is-invalid]="passeport.invalid && passeport.touched" />
+                     <div *ngIf="passeport.errors && passeport.invalid && passeport.touched" >
+
+                        <small class="text-danger" *ngIf="passeport.errors.required"> veuillez saisir le numéro du  passeport </small>
+                        <small class="text-danger" *ngIf="passeport.errors.minlength"> veuillez saisir un numéro valid "7 caractères"</small>
+                  
+                    </div>     </div>
+                </div>
+                <div class="mb-3 row ">
+                    <div class="col-sm-4">
+                        <label class="h6" >Marque : </label>
+                       </div> 
+                       <div class="col-md-8 col-12">
+                       <input type="text" class="form-control" id="marque" placeholder="Saisir la marque du téléphone" required="required"
+                       [(ngModel)] = "dossier.marque" name = "marque" #marque="ngModel" 
+                        [class.is-invalid]="marque.invalid && marque.touched" />
+              
+                   <small class="text-danger" [class.d-none]="marque.valid || marque.untouched" >veuillez saisir la marque du téléphone</small>
+                </div>   
+              </div>
+
+                <div class="mb-3 row ">
+                    <div class="col-sm-4">
+                        <label class="h6" >Modèle : </label>
+                       </div> 
+                       <div class="col-md-8 col-12">
+                          <input type="text" class="form-control" id="modele" placeholder="Saisir le modèle du téléphone" required="required"
+                          [(ngModel)] = "dossier.modele" name = "modele" #modele="ngModel" 
+                        [class.is-invalid]="modele.invalid && modele.touched"/>
+                   
+                     <small class="text-danger" [class.d-none]="modele.valid || modele.untouched" >veuillez saisir le modèle du téléphone</small>
+                    </div> 
+                 </div>
+        
+             <div class="mb-3 row ">
+                <div class="col-sm-4">
+                    <label class="h6" >Réf Bureau Frontalier : </label>
+                   </div> 
+                   <div class="col-md-8 col-12">
+                    <input type="text" class="form-control" id="refbf" placeholder="Saisir la référence du Bureau Frontalier" required="required" 
+                    [(ngModel)] = "dossier.refbf" name = "refbf" #refbf="ngModel" 
+                    [class.is-invalid]="refbf.invalid && refbf.touched" />
+             
+                <small class="text-danger" [class.d-none]="refbf.valid || refbf.untouched" >veuillez saisir la référence du Bureau Frontalier</small>
+            </div>  
+         </div>
+
+             
+             <div class="mb-3 row ">
+                <div class="col-sm-4">
+                    <label class="h6" >Numéro avis arrivé : </label>
+                   </div> 
+                   <div class="col-md-8 col-12">
+                    <input type="text" class="form-control" id="numAvis" placeholder="Saisir le numéro avis arrivé" required="required" 
+                    [(ngModel)] = "dossier.numAvis" name = "numAvis" #numAvis="ngModel" 
+                    [class.is-invalid]="numAvis.invalid && numAvis.touched" />
+             
+                <small class="text-danger" [class.d-none]="numAvis.valid || numAvis.untouched" >veuillez saisir le numéro avis arrivé</small>
+            </div>  
+         </div>
+
+             
+                <div>
+                    <button class = "btn bg-gradient-dark"  type="submit">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

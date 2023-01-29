@@ -1,0 +1,103 @@
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+    <app-sidebar></app-sidebar>
+  </aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+    <app-navbar></app-navbar>
+  
+  
+  
+  <div class="container-fluid py-4"> 
+    
+  </div>
+  <div class="container-fluid py-4">
+    <div class="container-fluid py-4"style="float: right;" > 
+      <div style="float: right; margin-right: 2ch;" >
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input class="search_input" [(ngModel)]="searchValue" type="text"  placeholder="Rechercher...">
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          </div>
+        </div>
+     </div>
+    </div>
+    <button class="btn active btn-secondary d-inline-flex align-items-center me-2 text-capitalize " (click) = "addDos()"  aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-plus"></i>&nbsp;
+      Ajouter un dossier
+  </button>
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4 blur shadow-blur mx-4  overflow-hidden" style="border-radius: 1rem; ">
+         
+          <div class="card-body px-0 pt-0 pb-2" >
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0 table-hover" > 
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Réf Bureau Frontalier</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Importateur</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Numéro avis arrivé</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">date</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Marque</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Modèle</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Statut</th>
+                    <th></th>
+                </tr>              
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dossier of dossiers  | filter:searchValue">
+                        <td>
+                          <div class="d-flex px-2">
+                            <div class="my-auto">
+                              <h6 class="text-xs font-weight-bold">{{dossier.refbf}}</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class=" mb-0  text-sm">{{dossier.importateur}}</p>
+                        </td>
+                        <td>
+                            <p class=" mb-0  text-sm">{{dossier.numAvis}}</p>
+                          </td>
+                          <td >
+                              <p  class="mb-0 text-sm"> {{dossier.dateDecision  | date:'dd/MM/yyyy' }}</p>
+                          </td>
+                        <td >
+                            <p  class="mb-0 text-sm"> {{dossier.marque}}</p>
+                        </td>
+                        <td >
+                            <p  class="mb-0 text-sm"> {{dossier.modele}}</p>
+                        </td>
+                        <td >
+                          <p  class="mb-0 text-sm"> {{dossier.statut}}</p>
+                      </td>
+                      <td class="align-middle ">
+                        <a routerLink ='/dossier/agentAll' (click) = "deleteDS(dossier.id)"  class="text-secondary  font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user" >
+                          <i class="far fa-trash-alt me-2"  aria-hidden="true" ></i>
+                           Delete  </a>
+                          <a>&nbsp;      </a>
+                         <a routerLink ='dossier/update/:id' (click) = "updateDS(dossier.id)"  class="text-secondary  font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                           <i class="fas fa-pencil-alt  me-2  "aria-hidden="true"></i>
+                          
+                         Edit
+                         </a>
+       
+                      </td>
+                     </tr>
+                     
+                     
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  </main>
+  

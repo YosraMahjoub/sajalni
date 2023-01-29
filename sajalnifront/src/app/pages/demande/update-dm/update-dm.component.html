@@ -1,0 +1,194 @@
+<app-navbar-front></app-navbar-front>
+
+<div class="container-fluid">
+</div>
+<div class="container-fluid py-4 contact mt-129">
+       
+        <div class="row justify-content-center ">
+            <div class="col-lg-5"  style="margin-top: 20ch;">
+                <div class="section-header">
+                    <h2>Détails</h2>
+                </div> 
+               <a href="/demandeClient">
+                  <div class="contact-info">
+                   <div class="contact-text">
+                     
+                        <h3>Mes Demandes</h3>
+                
+                    </div>
+                </div>
+                    </a>
+
+                    <a href="/demande/add">
+                        <div class="contact-info">
+                         <div class="contact-text">
+                           
+                              <h3>Ajouter une demande</h3>
+                      
+                          </div>
+                      </div>
+                          </a>
+           
+            </div>
+            <div class="col-lg-6 ">
+                <div class="contact-form justify-content-center">
+                  
+                    <form  #demandeform="ngForm" (ngSubmit) = "onSubmit()">
+                       
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >Cin : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                                <input type="text" class="form-control" id="cin"  placeholder="Saisir le numéro de votre cin" required="required" [(ngModel)] = "demande.cin" name = "cin" #cin="ngModel" 
+                                minlength="8"
+                                maxlength="8"
+                                pattern="^[0-9]*$"
+                                [class.is-invalid]="cin.invalid && cin.touched" />
+                         
+
+                          <div *ngIf="cin.errors && cin.invalid && cin.touched" >
+
+                                    <small class="text-danger" *ngIf="cin.errors.required"> veuillez saisir le numéro de votre cin </small>
+                                    <small class="text-danger" *ngIf="cin.errors.minlength || cin.errors.pattern "> veuillez saisir UN numéro valid "8 Chiffres"</small>
+                              
+                                </div>  
+                            
+                            </div>  
+                        
+                        </div>
+
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >Passeport : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                             <input type="text" class="form-control" id="passeport" placeholder="Saisir le numéro de votre passeport" required="required" 
+                             [(ngModel)] = "demande.passport" name = "passeport" #passeport="ngModel" 
+                             
+                             minlength="7"
+                             maxlength="7"
+                             [class.is-invalid]="passeport.invalid && passeport.touched" />
+                         
+                     
+                            <div *ngIf="passeport.errors && passeport.invalid && passeport.touched" >
+
+                                <small class="text-danger" *ngIf="passeport.errors.required"> veuillez saisir le numéro de votre passeport </small>
+                                <small class="text-danger" *ngIf="passeport.errors.minlength"> veuillez saisir un numéro valid "7 caractères"</small>
+                          
+                            </div>     </div>
+                        </div>
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >Marque : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                               <input type="text" class="form-control" id="marque" placeholder="Saisir la marque de votre téléphone" required="required"
+                               [(ngModel)] = "demande.marque" name = "marque" #marque="ngModel" 
+                                [class.is-invalid]="marque.invalid && marque.touched" />
+                      
+                           <small class="text-danger" [class.d-none]="marque.valid || marque.untouched" >veuillez saisir la marque de votre téléphone</small>
+                        </div>     </div>
+
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >Modèle : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                                  <input type="text" class="form-control" id="modele" placeholder="Saisir le modèle de votre téléphone" required="required"
+                                  [(ngModel)] = "demande.modele" name = "modele" #modele="ngModel" 
+                                [class.is-invalid]="modele.invalid && modele.touched"/>
+                           
+                             <small class="text-danger" [class.d-none]="modele.valid || modele.untouched" >veuillez saisir le modèle de votre téléphone</small>
+                            </div>  </div>
+                       
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >Numéro du serie : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                                <input type="text" class="form-control" id="numserie" placeholder="Saisir le numéro de serie de votre téléphone" required="required" 
+                                [(ngModel)] = "demande.numSerie" name = "numserie" #numserie="ngModel" 
+                                [class.is-invalid]="numserie.invalid && numserie.touched" />
+                         
+                            <small class="text-danger" [class.d-none]="numserie.valid || numserie.untouched" >veuillez saisir le numéro de serie de votre téléphone</small>
+                        </div>   </div>
+
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >IMEI 1 : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                                <input type="text" class="form-control" id="imei1" placeholder="Saisir IMEI1" required="required" 
+                                [(ngModel)] = "demande.imei1" name = "imei1" #imei1="ngModel" 
+                                minlength="15"
+                                maxlength="17"
+                                [class.is-invalid]="imei1.invalid && imei1.touched" />
+                       
+                            <div *ngIf="imei1.errors && imei1.invalid && imei1.touched" >
+
+                                <small class="text-danger" *ngIf="imei1.errors.required"> IMEI1 est un champ obligatoire </small>
+                                <small class="text-danger" *ngIf="imei1.errors.minlength "> veuillez saisir UN IMEI1 valid</small>
+                          
+                            </div>      </div>
+                        
+                        </div>
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >IMEI 2 : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                                <input type="text" class="form-control" id="imei2" placeholder="Saisir IMEI2" required="required" 
+                                [(ngModel)] = "demande.imei2" name = "imei2" #imei2="ngModel" 
+                                minlength="15"
+                                maxlength="17"
+                                [class.is-invalid]="imei2.invalid && imei2.touched" />
+                          
+                            <div *ngIf="imei2.errors && imei2.invalid && imei2.touched" >
+
+                                <small class="text-danger" *ngIf="imei2.errors.required"> IMEI2 est un champ obligatoire </small>
+                                <small class="text-danger" *ngIf="imei2.errors.minlength  "> veuillez saisir UN IMEI2 valid</small>
+                          
+                            </div>     </div>   
+                        </div>
+
+                        <div class="mb-3 row ">
+                            <div class="col-sm-4">
+                                <label class="h6" >IMEI 3 : </label>
+                               </div> 
+                               <div class="col-md-8 col-12">
+                                <input type="text" class="form-control" id="imei3" placeholder="Saisir IMEI3" required="required" 
+                                [(ngModel)] = "demande.imei3" name = "imei3" #imei3="ngModel" 
+                                minlength="15"
+                                maxlength="17"
+                                [class.is-invalid]="imei3.invalid && imei3.touched" />
+                     
+                            <div *ngIf="imei3.errors && imei3.invalid && imei3.touched" >
+
+                                <small class="text-danger" *ngIf="imei3.errors.required"> IMEI3 est un champ obligatoire </small>
+                                <small class="text-danger" *ngIf="imei3.errors.minlength"> veuillez saisir UN IMEI3 valid </small>
+                          
+                            </div> 
+                              </div> 
+                                  </div>
+                      
+                        <div>
+                            <div *ngIf="demande.statut =='en_cours'; else elseif1">
+
+                                <button class="btn"  type="submit"  >Enregistrer</button>
+                               
+                            </div>
+                            <ng-template #elseif1>
+                                <button class="btn"  type="submit" disabled>Enregistrer</button> 
+                                <div class="row"> 
+                                    <small class="text-danger"> *cette demande est déjà validée ! vous ne pouvez plus la modifier </small>
+                              </div>
+                            </ng-template>
+                           
+                        </div>
+                    </form>
+                </div>
+              
+            </div>
+        </div>
+    </div>

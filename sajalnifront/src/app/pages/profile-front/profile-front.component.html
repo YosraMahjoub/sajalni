@@ -1,0 +1,114 @@
+
+
+<app-navbar-front></app-navbar-front>
+
+<div class="container-fluid">
+   
+  </div>
+  <div class="container-fluid py-4 contact mt-129">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 ">
+        <div class="page-header min-height-200 border-radius-xl " style="background-image: url('../assets/white/img/curved-images/curved14.jpg'); background-position-y: 50%;">
+          <span class="mask  opacity-6"></span>
+        </div>
+        <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden" style="border-radius: 1rem; ">
+          <div class="row">
+            <div class=" text-center">
+              <div class="avatar avatar-xl text-center ">
+                <div *ngIf="user.roles[0].name.includes('CLIENT'); else elseif1">
+                <img src="../assets/white/img/client.png" alt="profile_image" class="w-200 border-radius-lg shadow-sm">
+              </div>
+              <ng-template #elseif1>
+                <img src="/assets/white/img/test.png" alt="profile_image" class="w-200 border-radius-lg shadow-sm">
+            </ng-template>
+            </div>
+            </div>
+
+            <div class="card-blog card-plain">
+            <div class="text-center" >
+              <div class="h-100" >
+                <h3 > {{user.nom}} </h3>
+                <div *ngFor="let role of user.roles">
+                  <div *ngIf="role.name.includes('CLIENT')">
+                <p class="mb-0 font-weight-bold text-lg" style="text-transform:capitalize"> Client </p>
+              </div>
+            </div>
+              </div>
+                <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
+                 
+                  <li class="nav-item">
+                    <label  class="h6" >{{user.date  | date:'fullDate'}} </label>
+                  </li>
+                </ul>
+             
+            
+                <hr class="horizontal dark my-3">
+                <a href="/demandeClient">
+  <h5  class="mb-0" >Mes Demandes</h5>
+            
+                </a>
+               </div>
+
+          </div>
+        </div>
+        </div>
+        
+        </div>  
+      <div class="col-lg-6 ">
+        <div class="contact-form justify-content-center" >
+            <h2 class="h3 mb-4" style="color: #686767;">Informations Générales</h2>
+          
+            <form (ngSubmit) = "onSubmit()"> 
+                
+              
+              <div class="mb-3 row ">   </div>
+                    <div class="mb-3 row ">
+                        <div class="col-sm-4">
+                            <label class="h6" >Nom : </label>
+                           </div> 
+                           <div class="col-md-8 col-12">
+                            <input class="form-control" id="first_name" type="text"  [(ngModel)] = "user.nom" name = "firstName" placeholder="Nom" required > 
+                         </div>
+                    </div>
+                <!--    <div class="col-md-8 mb-3">
+                      <div>
+                          <label class="h6" >Mot de passe</label>
+                          <input class="form-control" id="first_name" type="password"  [(ngModel)] = "user.mdp" name = "mdp" placeholder="**secret**" required > 
+                      </div>
+                  </div>-->
+                  <div class="mb-3 row ">
+                    <div class="col-sm-4">
+                            <label  class="h6">Email :</label>
+                          </div>
+                          <div class="col-md-8 col-12">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                                    &nbsp;  </span>
+                                    <input class="form-control" type="text" value="{{user.email}}" aria-label="Disabled input example" disabled readonly>
+                                  </div>
+                      </div>
+                        
+                    </div>
+                
+                  <div class="col-md-8 mb-3">
+                    <div>
+                      <label  class="h6" ></label>
+                      <div>
+        <button class = "btn" type ="submit">Modifier</button>
+      
+      </div> </div>
+    </div>
+            </form>
+          </div> 
+        
+        </div>
+        
+
+        
+
+
+</div>
+  <!-- hhhhhhhhhh-->
+  
+</div>

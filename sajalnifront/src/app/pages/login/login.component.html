@@ -1,0 +1,89 @@
+
+<section class="bg-image" style="background-image:url('../assets/white/img/login.jpeg')">
+    <div class="bg-image">
+        
+
+<div class="container-fluid py-4"> 
+  
+</div>
+<div class="container-fluid py-4"> 
+  
+</div>
+        <div class="row justify-content-center" >
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                    <div class="text-center text-md-center mb-4 mt-md-0">
+                        <h1 class="mb-0 h3"> Se connecter </h1>
+                    </div>
+                    <form (ngSubmit) = "onSubmit()"   novalidate>
+                      
+                        <!-- Form -->
+                        <div class="mb-4">
+                            <label> Email</label>
+                       
+                                <div class="input-group">
+                              
+                                <span class="input-group-text" id="basic-addon1">
+                                    <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                    </svg>
+                                    &nbsp; 
+                            </span>
+                             <input class="form-control" id="email" type="email"  ngModel email [(ngModel)] = "form.email" name = "email" placeholder="  xx@xx.com"  required
+                             #email="ngModel">
+                            </div>
+                       
+                            <div  *ngIf="errorMessage.includes('NONE_PROVIDED') else elseif1 " class="text-danger text-sm " >
+                            email is required!
+                          </div>
+                          <ng-template #elseif1>
+                            <div class="text-danger text-sm"  *ngIf="errorMessage.includes('existe pas')"> verifier votre email </div>           
+                        </ng-template>
+                    
+                    </div>
+                        <!-- End of Form -->
+                            <!-- Form -->
+                            <div class=" mb-4">
+                               
+                                    <div>
+                                        <label>Mot de passe </label>
+                                          <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon2">
+                                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                                    </span>
+                                    <input class="form-control" id="mdp"  [(ngModel)] = "form.mdp" name = "mdp" type="password" placeholder="  Mot de passe" required>
+                                   </div>  
+                                   
+                            <div  *ngIf="errorMessage.includes('Bad credentials')  " class="text-danger text-sm" >
+                                vérifier votre mot de passe
+                              </div>
+                                </div> </div>
+                            <!-- End of Form -->
+                          
+                        <div class="d-grid">
+                            <button class = "btn bg-gradient-dark" type ="submit">Se connecter</button>
+                        </div>
+                           
+                    </form>
+                   
+                    
+                    <div class="d-flex justify-content-center align-items-center mt-4">
+                        <span class="fw-normal">
+                            Vous n'avez pas un compte? 
+                            <a href="/signup" class="fw-bold">s'inscrire'</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    
+<div class="container-fluid py-4"> 
+  
+</div>
+<div class="container-fluid py-4"> 
+  
+</div>
+    
+</section>
+

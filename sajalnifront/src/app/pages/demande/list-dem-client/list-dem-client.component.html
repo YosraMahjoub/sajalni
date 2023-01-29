@@ -1,0 +1,60 @@
+<app-navbar-front></app-navbar-front>
+
+<div class="container-fluid">
+</div>
+<div class="container-fluid py-4 contact mt-129">
+
+        <div class="row">
+          <div class="col align-self-start"></div>
+          <div class="col align-self-center"></div>
+          <div class="col align-self-end">
+            <div class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-5">
+                <input class="form-control form-control-sm mr-3 w-75" [(ngModel)]="searchValue"  type="text" placeholder="Search" aria-label="Search">
+                <i class="fas fa-search active" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5" style="margin-top: 20ch;">
+                <div class="section-header">
+                    <h2>Mes demandes</h2>
+                </div> 
+                <a href="/demande/add">
+                    <div class="contact-info">
+                     <div class="contact-text">
+                       
+                          <h3>Ajouter demande</h3>
+                  
+                      </div>
+                  </div>
+                      </a>
+                 </div>
+            <div class="col-lg-6 ">
+               
+                  
+                <div class="service">
+              <div class="row"   >  
+                        <div class="col-lg-4 " *ngFor="let demande of demandes  | filter:searchValue">
+                            <div class="service-item">
+                                
+                                <h3>{{demande.dateCreation| date:'dd/MM/yyyy'}}</h3>
+                                <p>
+                                    Marque : {{demande.marque}}
+                                </p>
+                                <p>
+                                    Moldèle : {{demande.modele}}
+                                
+                                </p>
+                                <h6>{{demande.statut}}</h6>
+                                <a routerLink ='demandeClient/update/:id' (click) = "updateDM(demande.refsw)" >Afficher les détails</a>
+                                <p></p> 
+                                <div   style="color: red ; cursor: pointer;"routerLink ='/demandeClient' (click) = "deleteDM(demande.refsw)" >Supprimer</div>
+                            </div>
+                        </div>
+                  
+                    </div>    
+                </div>
+              
+            </div>
+        </div>
+    </div>
